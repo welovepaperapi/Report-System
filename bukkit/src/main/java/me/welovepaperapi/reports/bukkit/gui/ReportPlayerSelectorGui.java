@@ -72,7 +72,7 @@ public class ReportPlayerSelectorGui implements InventoryProvider {
     private List<Player> getTargetPlayers(Player reporter) {
         return Bukkit.getOnlinePlayers().stream()
             .filter(p -> !p.getUniqueId().equals(reporter.getUniqueId()))
-            .toList();
+            .collect(java.util.stream.Collectors.toList());
     }
 
     private void populateInnerGrid(InventoryContents contents, fr.minuskube.inv.content.Pagination pagination) {
